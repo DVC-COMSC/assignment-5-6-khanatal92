@@ -1,18 +1,25 @@
-
 #include <iostream>
 using namespace std;
 
-int main()
-{
-    int N;
-    cin >> N;
-
-    for (int i = 0; i < N; i++) {
-        for (int j = N - 1; j >= 0; j--) {
-			if (j >= i) {
-            cout << i << ", " << j << endl;
+int printRightBottomTriangleIndices(int rows, int columns) {
+    int totalCells = rows * columns; 
+    int count = 0;
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < columns; ++j) {
+                cout << i << ", " << j << endl;
+                ++count;
         }
-   	 }
+    }
+    return count;
 }
+
+int main()
+ {
+	int N;
+	cin >> N;
+
+    int rows = N;
+    int columns = N;
+    printRightBottomTriangleIndices(rows, columns);
     return 0;
-}
+ }
